@@ -1,0 +1,28 @@
+{
+  "name": "dexlib/exportusers",
+  "version": "1.0.0",
+  "type": "library",
+  "require": {
+    "php": "^8.1",
+    "symfony/console": "^6.3.8",
+    "symfony/yaml": "^6.4",
+    "laminas/laminas-form": "^3.4",
+    "doctrine/orm": "^2.16.2",
+    "mezzio/mezzio-hal": "^2.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dexlib\\ExportUsers\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ivan Markovic",
+      "email": "ivandexter26@yahoo.com"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "squizlabs/php_codesniffer": "^3.13"
+  }
+}
