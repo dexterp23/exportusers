@@ -4,6 +4,7 @@ namespace Dexlib\ExportUsers\Service\Mail;
 
 class EmailTemplates implements EmailTemplatesInterface
 {
+    protected const EMAIL_TEMPLATE_FOLDER = '/var/www/html/vendor/dexterp23/exportusers/data/templates/mail/';
     public const MAIL_EXPORT_USERS = 'exportUsers';
 
     protected array $config;
@@ -16,7 +17,7 @@ class EmailTemplates implements EmailTemplatesInterface
     public function getMailTemplate(string $key): string
     {
         $array = [
-            self::MAIL_EXPORT_USERS => $this->config['mailFolder'] . '/exportUsers.phtml',
+            self::MAIL_EXPORT_USERS => self::EMAIL_TEMPLATE_FOLDER . 'exportUsers.phtml',
         ];
         return $array[$key];
     }
