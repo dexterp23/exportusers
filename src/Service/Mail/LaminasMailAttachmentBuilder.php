@@ -34,10 +34,8 @@ class LaminasMailAttachmentBuilder implements LaminasMailAttachmentBuilderInterf
         switch ($attachment['attachmentType']) {
             case MailAttachment::ATTACHMENT_TYPE_STREAM:
                 return $attachment['content'];
-                break;
             case MailAttachment::ATTACHMENT_TYPE_PATH:
                 return fopen($attachment['content'], 'r');
-                break;
             default:
                 throw new \InvalidArgumentException("Invalid attachment type");
         }

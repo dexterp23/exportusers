@@ -2,7 +2,7 @@
 
 namespace Dexlib\ExportUsers\Service\Mail;
 
-use \Laminas\Mime\Mime;
+use Laminas\Mime\Mime;
 
 class MailAttachment implements MailAttachmentInterface
 {

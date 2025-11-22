@@ -13,9 +13,10 @@ use Dexlib\ExportUsers\Utils\FilenameGeneratorInterface;
 
 class ExportUsersService
 {
-    protected const USERS_PER_PAGE = 2;
+    protected const USERS_PER_PAGE = 100;
 
     protected array $data;
+    protected array $config;
     protected string $setCsvFile;
     protected UserCSVExportInterface $userCSVExport;
     protected FilenameGeneratorInterface $filenameGenerator;
@@ -60,7 +61,9 @@ class ExportUsersService
         //attachment
         $filename = $this->filenameGenerator->generate('exportbenutzer', 'csv');
         $mailAttachmentCollection = $this->mailAttachmentCreate->createCollection();
-        $mailAttachmentCollection->add($this->mailAttachmentCreate->createCSVAttachmentStream($this->getCsvFile(), $filename));
+        $mailAttachmentCollection
+            ->add($this->mailAttachmentCreate
+                ->createCSVAttachmentStream($this->getCsvFile(), $filename));
         $attachmentsArray = $mailAttachmentCollection->toArray();
         //build email
         $message = $this->mailMessageBuilder
@@ -95,7 +98,7 @@ class ExportUsersService
         $page = 1;
         $isFirstPage = true;
 
-        while(true) {
+        while (true) {
             $users = $this->getUsers($page);
 
             if (empty($users)) {
@@ -127,7 +130,7 @@ class ExportUsersService
     {
         $data = $this->getData();
         $records = [];
-        $max = ($page * self::USERS_PER_PAGE)-1;
+        $max = ($page * self::USERS_PER_PAGE) - 1;
         $start = $max - self::USERS_PER_PAGE + 1;
         for ($i = $start; $i <= $max; $i++) {
             if (!empty($data[$i])) {
@@ -136,7 +139,7 @@ class ExportUsersService
         }
         return $records;
     }
-    
+
     public function getData(): array
     {
         return $this->data;
