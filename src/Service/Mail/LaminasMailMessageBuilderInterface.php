@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
 use Laminas\Mail\Message;
 

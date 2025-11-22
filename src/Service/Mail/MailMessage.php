@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
 class MailMessage implements MailMessageInterface
 {

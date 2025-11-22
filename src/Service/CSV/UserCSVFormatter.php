@@ -1,30 +1,13 @@
 <?php
 
-namespace App\Service\CSV;
+namespace Dexlib\ExportUsers\Service\CSV;
 
 use Users\Entity\User;
 
 class UserCSVFormatter implements UserCSVFormatterInterface
 {
-    public function format(User $user): array
+    public function format(array $user): array
     {
-        return [
-            $user->getOldUsername(),
-            $user->getFirstName(),
-            $user->getLastName(),
-            $user->getEmail(),
-            $this->formatRoles($user),
-        ];
-    }
-
-    private function formatRoles(User $user): string
-    {
-        $roles = $user->getRolesNames();
-
-        if (empty($roles)) {
-            return '';
-        }
-
-        return implode(PHP_EOL, $roles);
+        return array_values($user);
     }
 }

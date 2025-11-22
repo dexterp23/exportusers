@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils;
+namespace Dexlib\ExportUsers\Utils;
 
 class FilenameGenerator implements FilenameGeneratorInterface
 {

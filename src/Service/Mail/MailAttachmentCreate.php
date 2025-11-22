@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
-class MailAttachmentCreate
+class MailAttachmentCreate implements MailAttachmentCreateInterface
 {
     public function createCollection(): MailAttachmentCollectionInterface
     {

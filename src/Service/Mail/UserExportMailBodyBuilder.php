@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
-use App\Utils\EmailTemplatesInterface;
+use Dexlib\ExportUsers\Utils\EmailTemplatesInterface;
 
 class UserExportMailBodyBuilder implements MailBodyBuilderInterface
 {

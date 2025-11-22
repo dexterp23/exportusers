@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
 use Laminas\View\Model\ViewModel;
 use Laminas\View\Renderer\PhpRenderer;

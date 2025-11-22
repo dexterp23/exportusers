@@ -4,6 +4,16 @@ declare(strict_types=1);
 
 namespace Dexlib\ExportUsers;
 
+use Dexlib\ExportUsers\Service\Export\ExportUsersService;
+use Dexlib\ExportUsers\Service\Export\ExportUsersServiceFactory;
+use Dexlib\ExportUsers\Service\CSV\UserCSVExport;
+use Dexlib\ExportUsers\Service\CSV\UserCSVExportFactory;
+use Dexlib\ExportUsers\Service\Mail\SmtpMailSender;
+use Dexlib\ExportUsers\Service\Mail\SmtpMailSenderFactory;
+use Dexlib\ExportUsers\Service\Mail\LaminasMailMessageBuilder;
+use Dexlib\ExportUsers\Service\Mail\LaminasMailMessageBuilderFactory;
+use Dexlib\ExportUsers\Service\Mail\MailBodyBuilder;
+use Dexlib\ExportUsers\Service\Mail\MailBodyBuilderFactory;
 use Mezzio\Hal\Metadata\MetadataMap;
 
 /**
@@ -37,7 +47,11 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories'  => [
-
+                ExportUsersService::class => ExportUsersServiceFactory::class,
+                UserCSVExport::class => UserCSVExportFactory::class,
+                SmtpMailSender::class => SmtpMailSenderFactory::class,
+                LaminasMailMessageBuilder::class => LaminasMailMessageBuilderFactory::class,
+                MailBodyBuilder::class => MailBodyBuilderFactory::class,
             ],
         ];
     }

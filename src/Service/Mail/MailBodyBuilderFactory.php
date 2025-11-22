@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Mail;
+namespace Dexlib\ExportUsers\Service\Mail;
 
-use App\Utils\EmailTemplates;
+use Dexlib\ExportUsers\Service\Mail\EmailTemplates;
 use Psr\Container\ContainerInterface;
 use Roles\Entity\Role;
 

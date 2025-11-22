@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\CSV;
+namespace Dexlib\ExportUsers\Service\CSV;
 
 interface CSVWriterInterface
 {
